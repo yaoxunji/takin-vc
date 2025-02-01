@@ -55,24 +55,24 @@
         </h2>
 
       <!-- [<a href="https://arxiv.org/abs/2409.12139">Paper</a>] -->
-      <!-- [<a href="paper/TakinVC.pdf">Paper</a>] -->
-		<!-- [<a href="https://zhufengai.ximalaya.com/">Official Website</a>] -->
+      <!-- [<a href="paper/TakinVC.pdf">Paper</a>]
+		[<a href="https://zhufengai.ximalaya.com/">Official Website</a>]
         <p class="fst-italic mb-0">
 			<br>
-			<b>Anonymous Submission</b>
+			<b>Everest Team</b>
 		<p></p>
         </p>
-        <!-- <p>Ximalaya Inc.</p> -->
+        <p>Ximalaya Inc.</p> -->
 	</div>
 	<p style="text-align: left"><b>Abstract:</b>
 <!--		Introduce TakinVC, ....-->
-Zero-shot voice conversion (VC) aims to transform the source speaker timbre into an arbitrary unseen one without altering the original speech content.
-While recent advancements in zero-shot VC methods have shown remarkable progress, there still remains considerable potential for improvement in terms of improving speaker similarity and speech naturalness.
-In this paper, we propose Takin-VC, a novel zero-shot VC framework based on jointly hybrid content and memory-augmented context-aware timbre modeling to tackle this challenge.
-Specifically, an effective hybrid content encoder, guided by neural codec training, that leverages quantized features from pre-trained HybridFormer and WavLM is first presented to extract the linguistic content of the source speech. 
-Subsequently, we introduce an advanced cross-attention-based context-aware timbre modeling approach that learns the fine-grained, semantically associated target timbre features.
-To further enhance both speaker similarity and real-time performance, we utilize a conditional flow matching model to reconstruct the Mel-spectrogram of the source speech. Additionally, we advocate an efficient memory-augmented module designed to generate high-quality conditional target inputs for the flow matching process, thereby improving the overall performance of the proposed system.
-Experimental results demonstrate that the proposed Takin-VC method surpasses state-of-the-art zero-shot VC systems, delivering superior performance in terms of both speech naturalness and speaker similarity.
+Expressive zero-shot voice conversion (VC) is a critical and challenging task that aims to transform the source timbre into an arbitrary unseen speaker while preserving the original content and expressive qualities.
+Despite recent progress in zero-shot VC, there remains considerable potential for improvements in speaker similarity and speech naturalness. Moreover, existing zero-shot VC systems struggle to fully reproduce paralinguistic information in highly expressive speech, such as breathing, crying, and emotional nuances, limiting their practical applicability.
+To address these issues, we propose Takin-VC, a novel expressive zero-shot VC framework via adaptive hybrid content encoding and memory-augmented context-aware timbre modeling. 
+Specifically, we introduce an innovative hybrid content encoder that incorporates an adaptive fusion module, capable of effectively integrating quantized features of the pre-trained WavLM and HybridFormer in an implicit manner, so as to extract precise linguistic features while enriching paralinguistic elements.
+For timbre modeling, we propose advanced memory-augmented and context-aware modules to generate high-quality target timbre features and fused representations that seamlessly align source content with target timbre.
+To enhance real-time performance, we advocate a conditional flow matching model to reconstruct the Mel-spectrogram of the source speech.
+Experimental results show that our Takin-VC consistently surpasses state-of-the-art VC systems, achieving notable improvements in terms of speech naturalness, speech expressiveness, and speaker similarity, while offering enhanced inference speed. 
 	<!-- <p style="text-align: center;">
 		<img src="pics/takin-tts-emo.png" height="480" width="1280">
 	</p> -->
@@ -214,6 +214,41 @@ Experimental results demonstrate that the proposed Takin-VC method surpasses sta
 						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/para/ad00008-prompt-1_zh-cn_shenlige_sadness_57-ppg++.mp3" autoplay/>Your browser does not support the audio element.</audio><br></td>
 					</tr>
 
+				</tbody>
+				<tbody>
+					<tr>
+						<th colspan="4" style="vertical-align: middle;text-align: center;">Samples of IEMOCAP Dataset</th>
+					</tr>
+					<tr>
+						<th colspan="1" style="vertical-align: middle;text-align: center; width: 200px;">Source</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center; width: 200px;">Prompt</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center; width: 200px;">Paralinguistic Tag</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center; width: 200px;">PPG+WavLM Generated</th>
+					</tr>
+					<tr>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 240px;"><source src="audios/iemocap/source/neu_Ses01F_script02_1_M025.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/prompt/Ses03F_impro08_F027.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : middle;text-align:center;">The sound of clearing the throat.<br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/generate/neu_Ses01F_script02_1_M025.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 240px;"><source src="audios/iemocap/source/hap_Ses01F_script03_1_M013.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/prompt/Ses04F_impro08_F008.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : middle;text-align:center;">The sound of clearing the throat.<br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/generate/hap_Ses01F_script03_1_M013.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 240px;"><source src="audios/iemocap/source/sur_Ses01M_script02_2_F038.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/prompt/Ses02M_impro08_M025.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : middle;text-align:center;">Hum Sound.<br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/generate/sur_Ses01M_script02_2_F038.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+					</tr>
+					<tr>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 240px;"><source src="audios/iemocap/source/sad_Ses03F_script01_3_M039.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/prompt/Ses03M_impro05b_F016.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+						<td style="vertical-align : middle;text-align:center;">Tail Drag Sound.<br></td>
+						<td style="vertical-align : top;text-align:center;"><audio controls="controls" style="width: 220px;"><source src="audios/iemocap/generate/sad_Ses03F_script01_3_M039.wav" autoplay/>Your browser does not support the audio element.</audio><br></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
